@@ -1,0 +1,46 @@
+{{- range $index, $nodepool := .Values.nodepools }}
+apiVersion: rke-machine-config.cattle.io/v1
+kind: PacketConfig
+metadata:
+  name: {{ $nodepool.name }}
+  namespace: fleet-default
+{{- if $nodepool.billingCycle }}
+billingCycle: {{ $nodepool.billingCycle }}
+{{- end }}
+{{- if $nodepool.facilityCode }}
+facilityCode: {{ $nodepool.facilityCode }}
+{{- end }}
+{{- if $nodepool.hwReservationId }}
+hwReservationId: {{ $nodepool.hwReservationId }}
+{{- end }}
+{{- if $nodepool.os }}
+os: {{ $nodepool.os }}
+{{- end }}
+{{- if $nodepool.plan }}
+plan: {{ $nodepool.plan }}
+{{- end }}
+{{- if $nodepool.projectId }}
+projectId: {{ $nodepool.projectId }}
+{{- end }}
+{{- if $nodepool.spotInstance }}
+spotInstance: {{ $nodepool.spotInstance }}
+{{- end }}
+{{- if $nodepool.spotPriceMax }}
+spotPriceMax: {{ $nodepool.spotPriceMax }}
+{{- end }}
+{{- if $nodepool.terminationTime }}
+terminationTime: {{ $nodepool.terminationTime }}
+{{- end }}
+{{- if $nodepool.userdata }}
+userdata: {{ $nodepool.userdata }}
+{{- end }}
+common:
+{{- if $nodepool.labels }}
+  labels:
+{{ toYaml $nodepool.labels | indent 4 }}
+{{- end }}
+{{- if $nodepool.taints }}
+  taints:
+{{ toYaml $nodepool.taints | indent 4 }}
+{{- end }}
+{{- end }}

@@ -1,0 +1,172 @@
+questions:
+- variable: cluster.name
+  default: mycluster
+  description: "Specify the name of the cluster"
+  label: "Cluster Name"
+  required: true
+  type: string
+  group: "General"
+- variable: cloudCredentialSecretName
+  default:
+  description: "CloudCredentialName for provisioning cluster"
+  label: "CloudCredential Name"
+  type: cloudcredential
+  group: "General"
+- variable: kubernetesVersion
+  default: v1.21.3-rc5+rke2r2
+  description: "Specify Kubernetes version"
+  label: "Kubernetes Version"
+  type: enum
+  required: true
+  options:
+  - v1.18.17+rke2r1
+  - v1.19.9+rke2r1
+  - v1.20.5+rke2r1
+  - v1.20.6+rke2r1
+  - v1.21.3-rc5+rke2r2
+  group: "General"
+- variable: rke.localClusterAuthEndpoint.enabled
+  default: false
+  label: "Local Auth endpoint"
+  description: "Enable local auth access endpoint"
+  type: boolean
+  group: "Auth Access Endpoint"
+  show_subquestion_if: true
+  subquestions:
+  - variable: rke.localClusterAuthEndpoint.fqdn
+    default:
+    description: "Local auth access endpoint FQDN"
+    label: "Auth Endpoint FQDN"
+    type: hostname
+    group: "Auth Access Endpoint"
+  - variable: rke.localClusterAuthEndpoint.caCerts
+    default:
+    label: "Auth Endpoint Cacerts"
+    description: "Local auth access endpoint CACerts"
+    type: multiline
+    group: "Auth Access Endpoint"
+- variable: monitoring.enabled
+  default: false
+  label: "Enable monitoring"
+  description: "Enable monitoring"
+  type: boolean
+  group: "Monitoring"
+  show_subquestion_if: true
+  subquestions:
+  - variable: monitoring.version
+    default:
+    label: "Monitoring Version"
+    description: "Choose chart version of monitoring. If empty latest version will be installed"
+    type: string
+    group: "Monitoring"
+  - variable: monitoring.values
+    default:
+    label: "Monitoring Values"
+    description: "Custom monitoring chart values"
+    type: multiline
+    group: "Monitoring"
+- variable: nodepools.0.name
+  default:
+  description: "Specify nodepool name"
+  type: string
+  label: "Nodepool name"
+  required: true
+  group: "Nodepools"
+- variable: nodepools.0.quantity
+  default: 1
+  description: "Specify node count"
+  type: int
+  required: true
+  label: "Node count"
+  group: "Nodepools"
+- variable: nodepools.0.etcd
+  default: true
+  label: etcd
+  type: boolean
+  group: "Nodepools"
+- variable: nodepools.0.worker
+  default: true
+  label: worker
+  type: boolean
+  group: "Nodepools"
+- variable: nodepools.0.controlplane
+  label: controlplane
+  default: true
+  type: boolean
+  group: "Nodepools"
+- variable: nodepools.0.billingCycle
+  label: "Billing Cycle"
+  default: "hourly"
+  type: enum
+  options:
+    - hourly
+    - daily
+    - weekly
+  description: "Billing cycle for VMs"
+  group: "Nodepools"
+- variable: nodepools.0.facilityCode
+  label: "Equinix Facility"
+  default: "ams6"
+  type: enum
+  options:
+    - ams6
+    - fr2
+    - dc13
+    - sv15
+  description: "Datacenter to deploy VMs in"
+  group: "Nodepools"
+- variable: nodepools.0.hwReservationId
+  label: "Hardware reservation ID"
+  default: ""
+  type: string
+  description: "ID of reserved Hardware instance"
+  group: "Nodepools"
+- variable: nodepools.0.os
+  label: "OS"
+  default: "ubuntu_20_04"
+  type: enum
+  options:
+    - ubuntu_20_04
+    - ubuntu_20_10
+    - centos_8
+  description: "VM Operating System"
+  group: "Nodepools"
+- variable: nodepools.0.plan
+  label: "VM Plan"
+  default: "c3.small.x86"
+  type: enum
+  options:
+    - c3.small.x86
+    - c3.medium.x86
+  description: "Size ov VMs"
+  group: "Nodepools"
+- variable: nodepools.0.projectId
+  label: "Project ID"
+  default: ""
+  type: string
+  description: "Equinix Project ID"
+  group: "Nodepools"
+- variable: nodepools.0.spotInstance
+  label: "Use Spot Instance"
+  default: false
+  type: boolean
+  description: "Use spot instances"
+  group: "Nodepools"
+- variable: nodepools.0.spotPriceMax
+  label: "Max Sport Price"
+  default: ""
+  type: string
+  description: "Maximum VM price for spot instances"
+  group: "Nodepools"
+- variable: nodepools.0.terminationTime
+  label: "Termination Time"
+  default: ""
+  type: string
+  description: "Termination time for instance"
+  group: "Nodepools"
+- variable: nodepools.0.userdata
+  label: "User Data"
+  default: ""
+  type: multiline
+  description: "cloud-init user data fro VM"
+  group: "Nodepools"

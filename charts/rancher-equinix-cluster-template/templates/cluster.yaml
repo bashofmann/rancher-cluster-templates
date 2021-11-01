@@ -28,7 +28,7 @@ spec:
       name: {{ $nodepool.name }}
       machineConfigRef:
         kind: PacketConfig
-        name: {{ $nodepool.name }}
+        name: {{ .Values.cluster.name }}-{{ $nodepool.name }}
       paused: false
       displayName: {{ $nodepool.displayName }}
       {{- if $nodepool.machineDeploymentLabels }}

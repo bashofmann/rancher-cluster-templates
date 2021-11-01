@@ -1,7 +1,7 @@
 apiVersion: v1
 name: rancher-equinix-cluster-template
 description: RKE2 Cluster template for Equinix Metal
-version: 0.0.6
+version: 0.0.7
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Equinix_logo.svg/1024px-Equinix_logo.svg.png
 annotations:
   catalog.cattle.io/type: cluster-template

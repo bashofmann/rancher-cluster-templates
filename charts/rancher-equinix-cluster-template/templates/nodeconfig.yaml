@@ -2,7 +2,7 @@
 apiVersion: rke-machine-config.cattle.io/v1
 kind: PacketConfig
 metadata:
-  name: {{ $nodepool.name }}
+  name: {{ .Values.cluster.name }}-{{ $nodepool.name }}
   namespace: fleet-default
 {{- if $nodepool.billingCycle }}
 billingCycle: {{ $nodepool.billingCycle }}

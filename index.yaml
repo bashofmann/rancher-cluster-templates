@@ -5,6 +5,18 @@ entries:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template
     apiVersion: v1
+    created: "2021-11-01T15:23:08.875804869Z"
+    description: RKE2 Cluster template for Equinix Metal
+    digest: bf508e3a20fe482857642d4ed3f074b63d51a590daaf2e91659508022fb93ad7
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Equinix_logo.svg/1024px-Equinix_logo.svg.png
+    name: rancher-equinix-cluster-template
+    urls:
+    - https://github.com/bashofmann/rancher-equinix-cluster-template/releases/download/rancher-equinix-cluster-template-0.1.1/rancher-equinix-cluster-template-0.1.1.tgz
+    version: 0.1.1
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template
+    apiVersion: v1
     created: "2021-11-01T15:19:16.546952561Z"
     description: RKE2 Cluster template for Equinix Metal
     digest: 0cd0de085e2c30ba1f716fda64abe9813906dc8a01e3f0f90156ec2caeaa5db9
@@ -97,4 +109,4 @@ entries:
     urls:
     - https://github.com/bashofmann/rancher-equinix-cluster-template/releases/download/rancher-equinix-cluster-template-0.0.2/rancher-equinix-cluster-template-0.0.2.tgz
     version: 0.0.2
-generated: "2021-11-01T15:19:16.546997362Z"
+generated: "2021-11-01T15:23:08.876346469Z"

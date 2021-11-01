@@ -83,10 +83,10 @@ questions:
   group: "Nodepools"
 - variable: nodepools.0.facilityCode
   label: "Equinix Facility"
-  default: "ams6"
+  default: "am6"
   type: enum
   options:
-    - ams6
+    - am6
     - fr2
     - dc13
     - sv15

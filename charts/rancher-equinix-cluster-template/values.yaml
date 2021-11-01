@@ -51,7 +51,7 @@ nodepools:
   name: equinix-nodepool-1
 
   billingCycle: hourly
-  facilityCode: ams6
+  facilityCode: am6
   hwReservationId: ""
   os: ubuntu_20_04
   plan: c3.small.x86

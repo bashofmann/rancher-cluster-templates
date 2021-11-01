@@ -1,8 +1,9 @@
+{{- $clustername := .Values.cluster.name }}
 {{- range $index, $nodepool := .Values.nodepools }}
 apiVersion: rke-machine-config.cattle.io/v1
 kind: PacketConfig
 metadata:
-  name: {{ .Values.cluster.name }}-{{ $nodepool.name }}
+  name: {{ $clustername }}-{{ $nodepool.name }}
   namespace: fleet-default
 {{- if $nodepool.billingCycle }}
 billingCycle: {{ $nodepool.billingCycle }}

@@ -31,11 +31,6 @@ spec:
         name: {{ $nodepool.name }}
       paused: false
       displayName: {{ $nodepool.displayName }}
-      {{- if $nodepool.rollingUpdate }}
-      rollingUpdate:
-        maxUnavailable: {{ $nodepool.rollingUpdate.maxUnavailable }}
-        maxSurge: {{ $nodepool.rollingUpdate.maxSurge }}
-      {{- end }}
       {{- if $nodepool.machineDeploymentLabels }}
       machineDeploymentLabels:
 {{ toYaml $nodepool.machineDeploymentLabels | indent 8 }}

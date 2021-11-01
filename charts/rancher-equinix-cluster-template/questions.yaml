@@ -19,11 +19,8 @@ questions:
   type: enum
   required: true
   options:
-  - v1.18.17+rke2r1
-  - v1.19.9+rke2r1
-  - v1.20.5+rke2r1
-  - v1.20.6+rke2r1
-  - v1.21.3-rc5+rke2r2
+  - v1.21.5+rke2r2
+  - v1.21.6+rke2r1
   group: "General"
 - variable: rke.localClusterAuthEndpoint.enabled
   default: false
@@ -45,26 +42,6 @@ questions:
     description: "Local auth access endpoint CACerts"
     type: multiline
     group: "Auth Access Endpoint"
-- variable: monitoring.enabled
-  default: false
-  label: "Enable monitoring"
-  description: "Enable monitoring"
-  type: boolean
-  group: "Monitoring"
-  show_subquestion_if: true
-  subquestions:
-  - variable: monitoring.version
-    default:
-    label: "Monitoring Version"
-    description: "Choose chart version of monitoring. If empty latest version will be installed"
-    type: string
-    group: "Monitoring"
-  - variable: monitoring.values
-    default:
-    label: "Monitoring Values"
-    description: "Custom monitoring chart values"
-    type: multiline
-    group: "Monitoring"
 - variable: nodepools.0.name
   default:
   description: "Specify nodepool name"

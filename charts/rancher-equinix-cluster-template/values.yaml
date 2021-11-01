@@ -1,7 +1,7 @@
 # cluster specific values
 cluster:
   # specify cluster name
-  name: template-rke2
+  name: equinix-cluster
 
   # specify cluster labels
   labels: {}

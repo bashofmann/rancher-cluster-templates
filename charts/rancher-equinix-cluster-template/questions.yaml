@@ -1,6 +1,6 @@
 questions:
 - variable: cluster.name
-  default: mycluster
+  default: equinix-cluster
   description: "Specify the name of the cluster"
   label: "Cluster Name"
   required: true

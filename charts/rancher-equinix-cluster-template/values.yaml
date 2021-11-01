@@ -61,7 +61,7 @@ nodepools:
   #   down further, followed by scaling up the new MachineSet, ensuring
   #   that the total number of machines available at all times
   #   during the update is at least 70% of desired machines.
-     maxUnavailable: "5"
+     maxUnavailable: 5
   #   The maximum number of machines that can be scheduled above the
   #   desired number of machines.
   #   Value can be an absolute number (ex: 5) or a percentage of
@@ -75,7 +75,7 @@ nodepools:
   #   machines. Once old machines have been killed, new MachineSet can
   #   be scaled up further, ensuring that total number of machines running
   #   at any time during the update is at most 130% of desired machines.
-     maxSurge: "1"
+     maxSurge: 1
 
   # specify machineDeployment Labels
   # machineDeploymentLabels: {}

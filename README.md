@@ -1,9 +1,9 @@
-# rancher-equinix-cluster-template
+# rancher-cluster-templates
 
-Rancher Cluster Template to provision RKE2 Kubernetes clusters at Equinix Metal
+Rancher Cluster Templates to provision RKE2 Kubernetes clusters
 
 ## How to Use
 
 * Go to the Apps Marketplace in the `local` cluster in Rancher
-* Add a new Chart Repository to the HTTP(S) URL `https://bashofmann.github.io/rancher-equinix-cluster-template` without authentication
-* Activate the Equinix Metal Node Driver
+* Add a new Chart Repository to the HTTP(S) URL `https://bashofmann.github.io/rancher-cluster-templates` without authentication
+* For Equinix clusters: Activate the Equinix Metal Node Driver

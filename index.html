@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Helm Charts</title>
+    <title>Rancher Rodeo Helm Charts</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" />
@@ -10,50 +9,119 @@
       .markdown-body {
         box-sizing: border-box;
         min-width: 200px;
-        max-width: 980px;
         margin: 0 auto;
         padding: 45px;
       }
+
       @media (max-width: 767px) {
         .markdown-body {
           padding: 15px;
         }
       }
+      .charts {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .chart {
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #d7d9dd;
+        transition: transform .2s ease;
+        background-color: #eaedef;
+        width: 300px;
+        margin: 0.5em;
+      }
+
+      .chart .icon {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 110px;
+        background-color: #fff;
+        align-items: center;
+      }
+      .chart .icon img {
+        max-height: 80%;
+      }
+      .chart .body {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        border-top: 1px solid #d7d9dd;
+        padding: 0 1em;
+        flex-direction: column;
+        word-wrap: break-word;
+        text-align: center;
+      }
+      .chart .body .info {
+        word-wrap: break-word;
+        text-align: center;
+      }
+      .chart .body .description {
+        text-align: left;
+      }
     </style>
+
   </head>
 
   <body>
 
     <section class="markdown-body">
-      <h1>Helm Charts</h1>
+      <h1>Rancher Cluster Templates Helm Charts</h1>
 
       <h2>Usage</h2>
-      <pre lang="no-highlight"><code>
-        helm repo add halkeye https://halkeye.github.io/helm-charts
-      </code></pre>
 
-      <p>These are presented as is. Anyone is free to use them, and make suggestions, but they were created for my own use. At some point I want to submit them to the actual helm charts repo.</p>
+      <pre class="snippet" lang="no-highlight"><code>helm repo add rancher-cluster-templates https://bashofmann.github.io/rancher-cluster-templates</code></pre>
+
+      <p>This repository contains RKE2 Cluster template Helm charts that are used for demonstration purposes.</p>
+
+      <p><b>The Helm charts in this repository are not production ready and are meant for demonstration purposes only!</b>
 
       <h2>Charts</h2>
 
-      <ul>
+      <div class="charts">
 			
-				<li>
-					<p>
-						rancher-equinix-cluster-template
-						(<a href="https://github.com/bashofmann/rancher-equinix-cluster-template/releases/download/rancher-equinix-cluster-template-0.1.2/rancher-equinix-cluster-template-0.1.2.tgz" title="https://github.com/bashofmann/rancher-equinix-cluster-template/releases/download/rancher-equinix-cluster-template-0.1.2/rancher-equinix-cluster-template-0.1.2.tgz">
-						0.1.2
-						@
-						
-						</a>)
-					</p>
-					<p>
-						RKE2 Cluster template for Equinix Metal
-					</p>
-				</li>
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="rancher-aws-cluster-template's logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/bashofmann/rancher-cluster-templates/releases/download/rancher-aws-cluster-template-0.1.0/rancher-aws-cluster-template-0.1.0.tgz" title="https://github.com/bashofmann/rancher-cluster-templates/releases/download/rancher-aws-cluster-template-0.1.0/rancher-aws-cluster-template-0.1.0.tgz">
+                  rancher-aws-cluster-template
+                  (0.1.0@)
+                </a>
+              </p>
+              <p class="description">
+                RKE2 Cluster template for AWS
+              </p>
+            </div>
+          </div>
+        
 			
-      </ul>
+        
+          <div class="chart">
+            <div class="icon">
+              <img class="chart-item-logo" alt="rancher-equinix-cluster-template's logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Equinix_logo.svg/1024px-Equinix_logo.svg.png">
+            </div>
+            <div class="body">
+              <p class="info">
+                <a href="https://github.com/bashofmann/rancher-equinix-cluster-template/releases/download/rancher-equinix-cluster-template-0.1.2/rancher-equinix-cluster-template-0.1.2.tgz" title="https://github.com/bashofmann/rancher-equinix-cluster-template/releases/download/rancher-equinix-cluster-template-0.1.2/rancher-equinix-cluster-template-0.1.2.tgz">
+                  rancher-equinix-cluster-template
+                  (0.1.2@)
+                </a>
+              </p>
+              <p class="description">
+                RKE2 Cluster template for Equinix Metal
+              </p>
+            </div>
+          </div>
+        
+			
+      </div>
     </section>
-		<time datetime="2021-11-01T15:40:59" pubdate id="generated">Mon Nov 1 2021 03:40:59PM UTC&#43;00:00</time>
+		<time datetime="2022-02-21T16:27:04" pubdate id="generated">Mon Feb 21 2022 04:27:04PM UTC&#43;00:00</time>
   </body>
 </html>

@@ -1,5 +1,18 @@
 apiVersion: v1
 entries:
+  rancher-aws-cluster-template:
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template
+    apiVersion: v1
+    created: "2022-02-21T16:27:04.890270888Z"
+    description: RKE2 Cluster template for AWS
+    digest: 4aad348bc60e67f4c4a46aaa8f9981cb3cf6d4404c352255e34003c465d2619c
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png
+    name: rancher-aws-cluster-template
+    urls:
+    - https://github.com/bashofmann/rancher-cluster-templates/releases/download/rancher-aws-cluster-template-0.1.0/rancher-aws-cluster-template-0.1.0.tgz
+    version: 0.1.0
   rancher-equinix-cluster-template:
   - annotations:
       catalog.cattle.io/namespace: fleet-default
@@ -121,4 +134,4 @@ entries:
     urls:
     - https://github.com/bashofmann/rancher-equinix-cluster-template/releases/download/rancher-equinix-cluster-template-0.0.2/rancher-equinix-cluster-template-0.0.2.tgz
     version: 0.0.2
-generated: "2021-11-01T15:40:59.308508472Z"
+generated: "2022-02-21T16:27:04.890296888Z"

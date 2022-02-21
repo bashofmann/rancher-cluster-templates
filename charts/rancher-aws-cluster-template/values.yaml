@@ -1,0 +1,14 @@
+# cluster specific values
+cluster:
+  # specify cluster name
+  name: aws-cluster
+
+  # specify cluster labels
+  labels: {}
+
+  # specify cluster annotations
+  annotations: {}
+
+# specify cloud credential secret name, do not need to be provided if using custom driver
+cloudCredentialSecretName: ""
+

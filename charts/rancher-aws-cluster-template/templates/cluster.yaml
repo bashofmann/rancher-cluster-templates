@@ -1,0 +1,43 @@
+{{- $clustername := .Values.cluster.name }}
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  {{- if .Values.cluster.labels }}
+  labels:
+{{ toYaml .Values.cluster.labels | indent 4 }}
+  {{- end }}
+  {{- if .Values.cluster.annotations }}
+  annotations:
+{{ toYaml .Values.cluster.annotations | indent 4 }}
+  {{- end }}
+  name: {{ $clustername }}
+  namespace: fleet-default
+spec:
+  {{- if .Values.cloudCredentialSecretName }}
+  cloudCredentialSecretName: {{ .Values.cloudCredentialSecretName }}
+  {{- end }}
+  kubernetesVersion: v1.21.9+rke2r1
+  rkeConfig:
+    machinePools:
+    - controlPlaneRole: true
+      etcdRole: true
+      workerRole: false
+      quantity: 3
+      name: {{ $clustername }}-controlplane
+      machineConfigRef:
+        kind: Amazonec2Config
+        name: {{ $clustername }}-controlplane
+      paused: false
+      displayName: {{ $clustername }}-controlplane
+    - controlPlaneRole: false
+      etcdRole: false
+      workerRole: true
+      quantity: 2
+      name: {{ $clustername }}-worker
+      machineConfigRef:
+        kind: Amazonec2Config
+        name: {{ $clustername }}-worker
+      paused: false
+      displayName: {{ $clustername }}-worker
+    controlPlaneConfig:
+      cni: calico

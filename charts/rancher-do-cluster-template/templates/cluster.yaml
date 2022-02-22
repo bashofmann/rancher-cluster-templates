@@ -1,0 +1,24 @@
+apiVersion: provisioning.cattle.io/v1
+kind: Cluster
+metadata:
+  name: {{ .Values.cluster.name }}
+  namespace: fleet-default
+spec:
+  {{- if .Values.cloudCredentialSecretName }}
+  cloudCredentialSecretName: {{ .Values.cloudCredentialSecretName }}
+  {{- end }}
+  kubernetesVersion: v1.21.9+rke2r1
+  rkeConfig:
+    machinePools:
+    - controlPlaneRole: true
+      etcdRole: true
+      workerRole: true
+      quantity: 1
+      name: {{ .Values.cluster.name }}-nodes
+      machineConfigRef:
+        kind: DigitaloceanConfig
+        name: {{ .Values.cluster.name }}-nodes
+      paused: false
+      displayName: {{ .Values.cluster.name }}-nodes
+    controlPlaneConfig:
+      cni: calico

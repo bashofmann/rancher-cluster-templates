@@ -13,7 +13,7 @@ spec:
     - controlPlaneRole: true
       etcdRole: true
       workerRole: true
-      quantity: 1
+      quantity: {{ .Values.nodepool.count }}
       name: {{ .Values.cluster.name }}-nodes
       machineConfigRef:
         kind: DigitaloceanConfig

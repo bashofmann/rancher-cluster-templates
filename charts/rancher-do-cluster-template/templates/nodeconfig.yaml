@@ -4,6 +4,6 @@ metadata:
   name: {{ .Values.cluster.name }}-nodes
   namespace: fleet-default
 region: fra1
-size: s-2vcpu-4gb
+size: {{ .Values.nodepool.size }}
 sshUser: root
 image: ubuntu-20-04-x64

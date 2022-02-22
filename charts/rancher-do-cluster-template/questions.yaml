@@ -10,3 +10,18 @@ questions:
   label: "CloudCredential Name"
   type: cloudcredential
   group: "General"
+- variable: nodepool.size
+  label: "VM Size"
+  type: enum
+  options:
+    - s-2vcpu-4gb
+    - s-4vcpu-8gb
+    - s-6vcpu-16gb
+  description: "Size of each VM"
+  group: "Nodepools"
+- variable: nodepool.count
+  description: "Specify node count"
+  type: int
+  required: true
+  label: "Node count"
+  group: "Nodepools"

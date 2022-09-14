@@ -5,6 +5,18 @@ entries:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template
     apiVersion: v1
+    created: "2022-09-14T15:04:23.167176903Z"
+    description: RKE2 Cluster template for AWS
+    digest: 3843c525906ef5e69c2195458bb3252cb8cf21951b787011fddbb1f1c7cfb81f
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png
+    name: rancher-aws-cluster-template
+    urls:
+    - https://github.com/bashofmann/rancher-cluster-templates/releases/download/rancher-aws-cluster-template-0.2.1/rancher-aws-cluster-template-0.2.1.tgz
+    version: 0.2.1
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template
+    apiVersion: v1
     created: "2022-02-21T16:33:29.672198677Z"
     description: RKE2 Cluster template for AWS
     digest: d4e0dab82a3cab9cd0a96366fce9673622b0619fd2c956a5a9f72720de1f471c
@@ -26,6 +38,17 @@ entries:
     - https://github.com/bashofmann/rancher-cluster-templates/releases/download/rancher-aws-cluster-template-0.1.0/rancher-aws-cluster-template-0.1.0.tgz
     version: 0.1.0
   rancher-do-cluster-template:
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template
+    apiVersion: v1
+    created: "2022-09-14T15:04:23.336662741Z"
+    description: RKE2 Cluster template for DO
+    digest: f270df9233babd92b9835e0505f0f0594b920e74467ff2ec26d11bc496208a14
+    name: rancher-do-cluster-template
+    urls:
+    - https://github.com/bashofmann/rancher-cluster-templates/releases/download/rancher-do-cluster-template-0.3.1/rancher-do-cluster-template-0.3.1.tgz
+    version: 0.3.1
   - annotations:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template
@@ -60,6 +83,18 @@ entries:
     - https://github.com/bashofmann/rancher-cluster-templates/releases/download/rancher-do-cluster-template-0.1.0/rancher-do-cluster-template-0.1.0.tgz
     version: 0.1.0
   rancher-equinix-cluster-template:
+  - annotations:
+      catalog.cattle.io/namespace: fleet-default
+      catalog.cattle.io/type: cluster-template
+    apiVersion: v1
+    created: "2022-09-14T15:04:23.491751268Z"
+    description: RKE2 Cluster template for Equinix Metal
+    digest: 05d52561ed5d644fbd723c5f81c2ce908488812897e24c97e8da3c1ad2c07e49
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Equinix_logo.svg/1024px-Equinix_logo.svg.png
+    name: rancher-equinix-cluster-template
+    urls:
+    - https://github.com/bashofmann/rancher-cluster-templates/releases/download/rancher-equinix-cluster-template-0.1.3/rancher-equinix-cluster-template-0.1.3.tgz
+    version: 0.1.3
   - annotations:
       catalog.cattle.io/namespace: fleet-default
       catalog.cattle.io/type: cluster-template
@@ -180,4 +215,4 @@ entries:
     urls:
     - https://github.com/bashofmann/rancher-equinix-cluster-template/releases/download/rancher-equinix-cluster-template-0.0.2/rancher-equinix-cluster-template-0.0.2.tgz
     version: 0.0.2
-generated: "2022-05-10T15:16:55.26106162Z"
+generated: "2022-09-14T15:04:23.491903368Z"

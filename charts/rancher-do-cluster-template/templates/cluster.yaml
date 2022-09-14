@@ -20,5 +20,5 @@ spec:
         name: {{ .Values.cluster.name }}-nodes
       paused: false
       displayName: {{ .Values.cluster.name }}-nodes
-    controlPlaneConfig:
+    machineGlobalConfig:
       cni: calico
